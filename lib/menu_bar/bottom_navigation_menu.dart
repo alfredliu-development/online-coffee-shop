@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:online_coffee_shop/navigator/coffee_buy_bar.dart';
 import 'package:online_coffee_shop/navigator/home/home_bar.dart';
-import 'package:online_coffee_shop/navigator/payment_bar.dart';
+import 'package:online_coffee_shop/navigator/notif_bar.dart';
+import 'package:online_coffee_shop/navigator/order_menu_bar.dart';
 
 class BottomNavigationMenu extends StatefulWidget {
   final int index;
@@ -25,13 +25,13 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
         ),
 
         BottomNavigationBarItem(
-          icon: Icon(Icons.payment),
-          label: "Your Payment"
+          icon: Icon(Icons.notifications),
+          label: "Your Notification"
         ),
 
         BottomNavigationBarItem(
-          icon: Icon(Icons.coffee),
-          label: "Coffee Buyer"
+          icon: Icon(Icons.menu_book),
+          label: "Your Menu"
         )
       ],
     );
@@ -58,7 +58,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
         Navigator.push(
             context,
             PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => PaymentBar(),
+              pageBuilder: (context, animation, secondaryAnimation) => NotifBar(),
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
                 return FadeTransition(
                   opacity: animation,
@@ -72,7 +72,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
         Navigator.push(
             context,
             PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => CoffeeBuyBar(),
+              pageBuilder: (context, animation, secondaryAnimation) => OrderMenuBar(),
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
                 return FadeTransition(
                   opacity: animation,

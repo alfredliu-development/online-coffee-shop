@@ -199,20 +199,69 @@ class HomeBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          "assets/image/logo/instagram.png",
-                          width: 35,
-                          height: 35,
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/image/logo/instagram.png",
+                            width: 35,
+                            height: 35,
+                          ),
 
-                        SizedBox(height: 5),
-                        Text(
-                          "Instagram"
-                        )
-                      ],
+                          SizedBox(height: 5),
+                          Text(
+                            "Instagram"
+                          )
+                        ],
+                      ),
+                    ),
+
+                    onTap: () {},
+                  ),
+
+                  InkWell(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/image/logo/twitter_x.jpg",
+                            width: 35,
+                            height: 35,
+                          ),
+
+                          SizedBox(height: 5),
+                          Text(
+                            "Twitter/x"
+                          )
+                        ],
+                      ),
+                    ),
+
+                    onTap: () {},
+                  ),
+
+                  InkWell(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/image/logo/tik_tok.jpg",
+                            width: 35,
+                            height: 35,
+                          ),
+
+                          SizedBox(height: 5),
+                          Text(
+                            "Tik Tok"
+                          )
+                        ],
+                      ),
                     ),
 
                     onTap: () {},

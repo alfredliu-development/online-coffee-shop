@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:online_coffee_shop/menu_bar/bottom_navigation_menu.dart';
 import 'package:online_coffee_shop/menu_bar/drawer_menu.dart';
 
-class CoffeeBuyBar extends StatelessWidget {
-  const CoffeeBuyBar({super.key});
+class NotifBar extends StatefulWidget {
+  const NotifBar({super.key});
 
+  @override
+  State<NotifBar> createState() => _NotifBarState();
+}
+
+class _NotifBarState extends State<NotifBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,14 +18,14 @@ class CoffeeBuyBar extends StatelessWidget {
         title: Text(
           "coffee Shop",
           style: TextStyle(
-            fontFamily: 'HarunoUmi',
-            fontWeight: FontWeight.bold,
+              fontFamily: 'HarunoUmi',
+              fontWeight: FontWeight.bold
           ),
         ),
       ),
 
       drawer: DrawerMenu(),
-      bottomNavigationBar: BottomNavigationMenu(index: 2),
+      bottomNavigationBar: BottomNavigationMenu(index: 1),
     );
   }
 }
