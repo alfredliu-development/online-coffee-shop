@@ -42,190 +42,192 @@ class _SignInState extends State<SignIn> {
                 color: Colors.white70,
               ),
 
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    "SIGN IN",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Decol'
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      "SIGN IN",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Decol'
+                      ),
                     ),
-                  ),
 
-                  SizedBox(height: 25),
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          controller: _nameController,
-                          decoration: InputDecoration(
-                            labelText: 'Name',
-                            labelStyle: TextStyle(
-                              color: Colors.black54
-                            ),
+                    SizedBox(height: 25),
+                    Form(
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: _nameController,
+                            decoration: InputDecoration(
+                              labelText: 'Name',
+                              labelStyle: TextStyle(
+                                color: Colors.black54
+                              ),
 
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                color: Color.fromARGB(255, 252, 227, 116)
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 252, 227, 116)
+                                )
+                              ),
+
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)
                               )
                             ),
 
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)
-                            )
+                            validator: (v) => (v == null || v.isEmpty) ? 'The name is Empty' : null,
                           ),
 
-                          validator: (v) => (v == null || v.isEmpty) ? 'The name is Empty' : null,
-                        ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: _emailController,
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              labelStyle: TextStyle(
+                                color: Colors.black54
+                              ),
 
-                        SizedBox(height: 10),
-                        TextFormField(
-                          controller: _emailController,
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            labelStyle: TextStyle(
-                              color: Colors.black54
-                            ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 252, 227, 116)
+                                )
+                              ),
 
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                color: Color.fromARGB(255, 252, 227, 116)
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)
                               )
                             ),
 
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)
-                            )
+                            keyboardType: TextInputType.emailAddress,
+                            validator: (v) {
+                              if (v == null || v.isEmpty) return 'The email is Empty';
+                              return !v.contains('@') || !v.contains(".com") ? "This email isn't valid" : null;
+                            },
                           ),
 
-                          keyboardType: TextInputType.emailAddress,
-                          validator: (v) {
-                            if (v == null || v.isEmpty) return 'The email is Empty';
-                            return !v.contains('@') || !v.contains(".com") ? "This email isn't valid" : null;
-                          },
-                        ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: _passwordController,
+                            decoration: InputDecoration(
+                              labelText: "Password",
+                              labelStyle: TextStyle(
+                                color: Colors.black54
+                              ),
 
-                        SizedBox(height: 10),
-                        TextFormField(
-                          controller: _passwordController,
-                          decoration: InputDecoration(
-                            labelText: "Password",
-                            labelStyle: TextStyle(
-                              color: Colors.black54
-                            ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 252, 227, 116)
+                                )
+                              ),
 
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                color: Color.fromARGB(255, 252, 227, 116)
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)
                               )
                             ),
 
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)
-                            )
+                            keyboardType: TextInputType.visiblePassword,
+                            validator: (v) {
+                              return v == null || v.isEmpty
+                                  ? 'The password is Empty' : null;
+                            }
                           ),
 
-                          keyboardType: TextInputType.visiblePassword,
-                          validator: (v) {
-                            return v == null || v.isEmpty
-                                ? 'The password is Empty' : null;
-                          }
-                        ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: _passwordConfirmController,
+                            decoration: InputDecoration(
+                              labelText: "Confirm Password",
+                              labelStyle: TextStyle(
+                                color: Colors.black54
+                              ),
 
-                        SizedBox(height: 10),
-                        TextFormField(
-                          controller: _passwordConfirmController,
-                          decoration: InputDecoration(
-                            labelText: "Confirm Password",
-                            labelStyle: TextStyle(
-                              color: Colors.black54
-                            ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 252, 227, 116)
+                                )
+                              ),
 
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: BorderSide(
-                                color: Color.fromARGB(255, 252, 227, 116)
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)
                               )
                             ),
 
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)
-                            )
+                            keyboardType: TextInputType.visiblePassword,
+                            validator: (v) {
+                              return v == null || v.isEmpty
+                                  ? 'The confirm password is Empty' : null;
+                            }
                           ),
 
-                          keyboardType: TextInputType.visiblePassword,
-                          validator: (v) {
-                            return v == null || v.isEmpty
-                                ? 'The confirm password is Empty' : null;
-                          }
-                        ),
+                          SizedBox(height: 25),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 252, 227, 116),
+                              foregroundColor: Colors.white
+                            ),
 
-                        SizedBox(height: 25),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 252, 227, 116),
-                            foregroundColor: Colors.white
-                          ),
-
-                          child: Padding(
-                            padding: EdgeInsets.all(14),
-                            child: Text(
-                              "Sign In",
-                              style: TextStyle(
-                                fontFamily: 'Decol',
-                                fontWeight: FontWeight.bold
+                            child: Padding(
+                              padding: EdgeInsets.all(14),
+                              child: Text(
+                                "Sign In",
+                                style: TextStyle(
+                                  fontFamily: 'Decol',
+                                  fontWeight: FontWeight.bold
+                                ),
                               ),
                             ),
-                          ),
 
-                          onPressed: () => _submitForm(),
-                        )
-                      ],
+                            onPressed: () => _submitForm(),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
 
-                  SizedBox(height: 11),
-                  Center(
-                    child: Row(
-                      children: [
-                        Text(
-                          "Did you have a Account?",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'HarunoUmi'
-                          ),
-                        ),
-
-                        SizedBox(width: 10),
-                        TextButton(
-                          child: Text(
-                            "Sign Up",
-                          ),
-
-                          onPressed: () => Navigator.push(
-                            context,
-                            PageRouteBuilder(
-                              pageBuilder: (context, animation, secondaryAnimation) => SignUp(),
-                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                return FadeTransition(
-                                  opacity: animation,
-                                  child: child,
-                                );
-                              },
+                    SizedBox(height: 11),
+                    Center(
+                      child: Row(
+                        children: [
+                          Text(
+                            "Did you have a Account?",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'HarunoUmi'
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+
+                          SizedBox(width: 10),
+                          TextButton(
+                            child: Text(
+                              "Sign Up",
+                            ),
+
+                            onPressed: () => Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) => SignUp(),
+                                transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           )
