@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:online_coffee_shop/menu_bar/bottom_navigation_menu.dart';
 import 'package:online_coffee_shop/menu_bar/drawer_menu.dart';
+import 'package:online_coffee_shop/navigator/home/map_location.dart';
 
 class HomeBar extends StatelessWidget {
   const HomeBar({super.key});
@@ -142,7 +142,7 @@ class HomeBar extends StatelessWidget {
                 child: Card(
                   color: Color.fromARGB(255, 237, 202, 48),
                   child: Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(20),
                     child: Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -168,6 +168,42 @@ class HomeBar extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) => MapLocation(),
+                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+
+                      transitionDuration: Duration(milliseconds: 800)
+                    )
+                  );
+                },
+              ),
+            ),
+
+
+            Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: 23,
+                vertical: 28
+              ),
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                    ],
+                  )
+                ],
               ),
             )
           ],
