@@ -90,6 +90,7 @@ class _SignUpState extends State<SignUp> {
                           SizedBox(height: 20),
                           TextFormField(
                             controller: _passwordController,
+                            obscureText: true,
                             decoration: InputDecoration(
                                 labelText: "Password",
                                 labelStyle: TextStyle(

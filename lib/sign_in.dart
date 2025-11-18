@@ -15,6 +15,9 @@ class _SignInState extends State<SignIn> {
   final _passwordController = TextEditingController();
   final _passwordConfirmController = TextEditingController();
 
+  bool _passwordVisible = false;
+  bool _passwordConfirmVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,10 +118,21 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 10),
                           TextFormField(
                             controller: _passwordController,
+                            obscureText: !_passwordVisible,
                             decoration: InputDecoration(
                               labelText: "Password",
                               labelStyle: TextStyle(
                                 color: Colors.black54
+                              ),
+
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _passwordVisible ? Icons.visibility : Icons.visibility_off
+                                ),
+
+                                onPressed: () => setState(() {
+                                  _passwordVisible = !_passwordVisible;
+                                }),
                               ),
 
                               focusedBorder: OutlineInputBorder(
@@ -143,10 +157,21 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 10),
                           TextFormField(
                             controller: _passwordConfirmController,
+                            obscureText: !_passwordConfirmVisible,
                             decoration: InputDecoration(
                               labelText: "Confirm Password",
                               labelStyle: TextStyle(
                                 color: Colors.black54
+                              ),
+
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _passwordConfirmVisible ? Icons.visibility : Icons.visibility_off
+                                ),
+
+                                onPressed: () => setState(() {
+                                  _passwordConfirmVisible = !_passwordConfirmVisible;
+                                }),
                               ),
 
                               focusedBorder: OutlineInputBorder(
@@ -163,8 +188,12 @@ class _SignInState extends State<SignIn> {
 
                             keyboardType: TextInputType.visiblePassword,
                             validator: (v) {
-                              return v == null || v.isEmpty
-                                  ? 'The confirm password is Empty' : null;
+                              if (v == null || v.isEmpty) {
+                                return "The confirm password is Empty";
+                              }
+
+                              return v != _passwordController.text
+                                  ? 'The confirm password must same with password' : null;
                             }
                           ),
 

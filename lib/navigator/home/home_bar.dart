@@ -198,10 +198,24 @@ class HomeBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                    ],
+                  InkWell(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/image/logo/instagram.png",
+                          width: 35,
+                          height: 35,
+                        ),
+
+                        SizedBox(height: 5),
+                        Text(
+                          "Instagram"
+                        )
+                      ],
+                    ),
+
+                    onTap: () {},
                   )
                 ],
               ),
