@@ -1,3 +1,7 @@
+
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -9,8 +13,9 @@ class MapLocation extends StatefulWidget {
 }
 
 class _MapLocationState extends State<MapLocation> {
+  late GoogleMapController _googleMapController;
   static const _initialCameraPosition = CameraPosition(
-    target: LatLng(37.773972, -122.43297),
+    target: LatLng(37.773972, -122.431297),
     zoom: 11.5
   );
 
@@ -27,12 +32,19 @@ class _MapLocationState extends State<MapLocation> {
           ),
         ),
       ),
-
+      
       body: GoogleMap(
         myLocationButtonEnabled: false,
-        zoomControlsEnabled: true,
+        zoomControlsEnabled: false,
         initialCameraPosition: _initialCameraPosition,
+        onMapCreated: (controller) => _googleMapController = controller,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _googleMapController.dispose();
+    super.dispose();
   }
 }
