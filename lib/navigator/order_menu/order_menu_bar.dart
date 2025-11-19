@@ -26,6 +26,15 @@ class _OrderMenuBarState extends State<OrderMenuBar> {
 
       drawer: DrawerMenu(),
       bottomNavigationBar: BottomNavigationMenu(index: 2),
+      body: SingleChildScrollView(
+        child: ListView.builder(
+          padding: EdgeInsets.all(23),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+          },
+        ),
+      ),
     );
   }
 }

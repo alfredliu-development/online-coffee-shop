@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_coffee_shop/navigator/home/home_bar.dart';
+import 'package:online_coffee_shop/navigator/home_bar.dart';
 import 'package:online_coffee_shop/sign_in.dart';
 
 class SignUp extends StatefulWidget {

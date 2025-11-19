@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:online_coffee_shop/navigator/home/home_bar.dart';
+import 'package:online_coffee_shop/navigator/home_bar.dart';
 import 'package:online_coffee_shop/navigator/notif_bar.dart';
-import 'package:online_coffee_shop/navigator/order_menu_bar.dart';
+import 'package:online_coffee_shop/navigator/order_menu/order_menu_bar.dart';
 
 class BottomNavigationMenu extends StatefulWidget {
   final int index;
