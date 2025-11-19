@@ -1,23 +1,45 @@
 class OrderMenuList {
-  String image;
   String name;
   Map<String, double> lengthPrice;
+  Map<String, double> sugarPercent;
 
   OrderMenuList({
-    required this.image,
     required this.name,
-    required this.lengthPrice
+    required this.lengthPrice,
+    required this.sugarPercent
 });
 }
 
 var listOrderMenu = [
   OrderMenuList(
-    image: "assets/image/coffee_name.jpg",
     name: "Americano",
     lengthPrice: {
       "L": 45.0,
       "M": 40.0,
       "R": 31.2
+    },
+
+    sugarPercent: {
+      "0%": 0.0,
+      "20%": 2.0,
+      "70%": 4.0,
+      "100%": 8.0
     }
   ),
+
+  OrderMenuList(
+    name: "Cappuccino",
+      lengthPrice: {
+        "L": 45.0,
+        "M": 40.0,
+        "R": 31.2
+      },
+
+      sugarPercent: {
+        "0%": 0.0,
+        "20%": 2.0,
+        "70%": 4.0,
+        "100%": 8.0
+      }
+  )
 ];
