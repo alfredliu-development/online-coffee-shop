@@ -10,6 +10,19 @@ class AccountBar extends StatefulWidget {
 class _AccountBarState extends State<AccountBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Account",
+          style: TextStyle(
+            fontFamily: 'Decol',
+            fontWeight: FontWeight.bold
+          ),
+        ),
+      ),
+
+      body: Column(),
+    );
   }
 }
