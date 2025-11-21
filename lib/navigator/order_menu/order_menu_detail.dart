@@ -14,6 +14,8 @@ class _OrderMenuDetailState extends State<OrderMenuDetail> {
   late String? selectSugar = widget.orderMenuList.sugarPercent.values.first.toString();
 
   late double price = 0;
+  late double lengthPrice = 0;
+  late double sugarPrice = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +132,8 @@ class _OrderMenuDetailState extends State<OrderMenuDetail> {
             onChanged: (value) {
               setState(() {
                 selectOption = value.toString();
-                price = list.value;
+                lengthPrice = list.value;
+                price = lengthPrice;
               });
             },
           ),
@@ -140,6 +143,8 @@ class _OrderMenuDetailState extends State<OrderMenuDetail> {
   }
 
   Widget chooseSugarPriceRadio() {
+    price = lengthPrice;
+
     return Column(
       children: widget.orderMenuList.sugarPercent.entries.map((list) {
         return ListTile(
@@ -172,7 +177,8 @@ class _OrderMenuDetailState extends State<OrderMenuDetail> {
             onChanged: (value) {
               setState(() {
                 selectSugar = value.toString();
-                price = list.value;
+                sugarPrice = list.value;
+                price += sugarPrice;
               });
             },
           ),

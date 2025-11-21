@@ -26,6 +26,7 @@ class _NotifBarState extends State<NotifBar> {
 
       drawer: DrawerMenu(),
       bottomNavigationBar: BottomNavigationMenu(index: 1),
+      body: SingleChildScrollView(),
     );
   }
 }

@@ -1,0 +1,3 @@
+class NotifList {}
+
+var listNotif = [];
