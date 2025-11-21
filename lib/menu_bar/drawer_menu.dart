@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_coffee_shop/navigator/account_bar.dart';
 import 'package:online_coffee_shop/navigator/payment_bar.dart';
-import 'package:online_coffee_shop/navigator/setting_bar.dart';
 import 'package:online_coffee_shop/sign_in.dart';
 import 'package:online_coffee_shop/sign_up.dart';
 
@@ -89,38 +88,6 @@ class DrawerMenu extends StatelessWidget {
                       );
                     },
                   ),
-
-                  SizedBox(height: 18),
-                  ListTile(
-                    leading: Icon(
-                      Icons.settings,
-                      size: 30,
-                    ),
-
-                    title: Text(
-                      "Setting",
-                      style: TextStyle(
-                          fontFamily: 'Decol',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18
-                      ),
-                    ),
-
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (context, animation, secondaryAnimation) => SettingBar(),
-                          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                            return FadeTransition(
-                              opacity: animation,
-                              child: child,
-                            );
-                          },
-                        )
-                      );
-                    },
-                  )
                 ],
               ),
             ),
