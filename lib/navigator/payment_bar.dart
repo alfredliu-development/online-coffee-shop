@@ -5,6 +5,16 @@ class PaymentBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Your Payment",
+          style: TextStyle(
+            fontFamily: 'Decol',
+            fontWeight: FontWeight.bold
+          ),
+        ),
+      ),
+    );
   }
 }

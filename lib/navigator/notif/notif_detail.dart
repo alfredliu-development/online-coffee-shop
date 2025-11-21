@@ -14,6 +14,7 @@ class _NotifDetailState extends State<NotifDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Detail",
           style: TextStyle(
@@ -23,7 +24,18 @@ class _NotifDetailState extends State<NotifDetail> {
         ),
       ),
 
-      body: Column(),
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          Text(
+            widget.notifList.title,
+            style: TextStyle(
+              fontFamily: 'Decol',
+              fontWeight: FontWeight.bold
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

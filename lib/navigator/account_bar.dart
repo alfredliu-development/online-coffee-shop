@@ -22,7 +22,9 @@ class _AccountBarState extends State<AccountBar> {
         ),
       ),
 
-      body: Column(),
+      body: Column(
+        children: [],
+      ),
     );
   }
 }
