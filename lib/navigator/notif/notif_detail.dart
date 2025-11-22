@@ -25,15 +25,55 @@ class _NotifDetailState extends State<NotifDetail> {
       ),
 
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(height: 20),
-          Text(
-            widget.notifList.title,
-            style: TextStyle(
-              fontFamily: 'Decol',
-              fontWeight: FontWeight.bold
+          SizedBox(height: 5),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              widget.notifList.title,
+              style: TextStyle(
+                fontFamily: 'Decol',
+                fontWeight: FontWeight.bold,
+                fontSize: 20
+              ),
             ),
           ),
+
+          Divider(
+            height: 10,
+            color: Colors.black45,
+            radius: BorderRadius.circular(20),
+            thickness: 2,
+            endIndent: 20,
+          ),
+
+          SizedBox(height: 20),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              widget.notifList.dateTitle,
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontFamily: 'HarunoUmi'
+              ),
+            ),
+          ),
+
+          SizedBox(height: 13),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 24),
+            child: Padding(
+              padding: EdgeInsets.all(23),
+              child: Text(
+                widget.notifList.about,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'HarunoUmi',
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

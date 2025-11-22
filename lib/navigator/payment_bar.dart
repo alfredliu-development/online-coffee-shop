@@ -15,6 +15,8 @@ class PaymentBar extends StatelessWidget {
           ),
         ),
       ),
+
+      body: Column(),
     );
   }
 }
